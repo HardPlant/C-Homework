@@ -38,7 +38,11 @@ public:
 			throw runtime_error("큐가 비어있음");
 		else
 		{
-			T result = queue[currentIndex];
+			T result = queue[0];
+			for(int index=0;index<currentIndex;index++)
+			{
+				queue[index] = queue[index+1];
+			}
 			currentIndex--;
 			return result;
 		}
